@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Pilgrim_Assignment_5.props" />
+</Project>
