@@ -19,10 +19,17 @@ namespace Pilgrim_Assignment_5.Controllers
             double sumTotal = 0;
             double stdDev = 0;
 
+            //Logging unsorted list
+            foreach (int i in lint)
+            {
+                System.Console.WriteLine(LogObject(i.ToString()));
+            }
+
+            //Sorting List and calculating Std Dev.
             lint.Sort();
 
             foreach (int i in lint)
-            {
+            {            
                 listTotal += i;
                 mean = listTotal / lint.Count;
                 sum = Math.Pow((i - mean), 2);
@@ -36,9 +43,16 @@ namespace Pilgrim_Assignment_5.Controllers
                 } else
                 {
                     slist.Add("Number " + i + " added: New Standard Deviation = " + String.Format("{0:0.00}", stdDev));
-                }              
+                }                        
             }
-            return Accepted(slist);
+            return slist;
+        }
+
+        //Logging function
+        string LogObject(string input)
+        {                
+            System.Diagnostics.Debug.WriteLine(input);          
+            return input;
         }
     }
 }
